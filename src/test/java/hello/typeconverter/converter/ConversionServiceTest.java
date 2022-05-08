@@ -13,15 +13,15 @@ public class ConversionServiceTest {
     void conversionServiceTest() {
         //등록
         DefaultConversionService conversionService = new DefaultConversionService();
-        conversionService.addConverter(new StringToIntegerConverter());
-        conversionService.addConverter(new IntegerToStringConverter());
-        conversionService.addConverter(new StringToIpPortConverter());
-        conversionService.addConverter(new IpPortToStringConverter());
+//        conversionService.addConverter(new StringToIntegerConverter());
+//        conversionService.addConverter(new IntegerToStringConverter());
+//        conversionService.addConverter(new StringToIpPortConverter());
+//        conversionService.addConverter(new IpPortToStringConverter());
 
         //사용
         assertThat(conversionService.convert("10", Integer.class)).isEqualTo(10);
         assertThat(conversionService.convert(10, String.class)).isEqualTo("10");
-        assertThat(conversionService.convert(new IpPort("192.168.0.1", 8080), String.class)).isEqualTo("192.168.0.1:8080");
-        assertThat(conversionService.convert("192.168.0.1:8080", IpPort.class)).isEqualTo(new IpPort("192.168.0.1", 8080));
+//        assertThat(conversionService.convert(new IpPort("192.168.0.1", 8080), String.class)).isEqualTo("192.168.0.1:8080");
+//        assertThat(conversionService.convert("192.168.0.1:8080", IpPort.class)).isEqualTo(new IpPort("192.168.0.1", 8080));
     }
 }
